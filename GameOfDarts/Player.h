@@ -12,7 +12,7 @@ public:
 	Player(string, string);
 	void setFirst(string);
 	void setLast(string);
-	void setScore(int);
+	void addScore(int);
 	string getFirstName();
 	string getLastName();
 	int getScore();

@@ -18,7 +18,7 @@ void Player::setLast(string l)
 	lastName = l;
 }
 
-void Player::setScore(int s)
+void Player::addScore(int s)
 {
 	score += s;
 }
@@ -35,12 +35,10 @@ string Player::getLastName()
 
 int Player::getScore()
 {
-	// FIXME
-	cout << "no score yet! FIXME!\n";
-	return 0;
+	return score;
 }
 
 void Player::print()
 {
-	cout << getFirstName() << " " << getLastName() << " has: " << getScore() << endl;
+	cout << getFirstName() << " " << getLastName() << " has " << getScore() << " points!" << endl;
 }

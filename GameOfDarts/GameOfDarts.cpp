@@ -3,36 +3,16 @@
 
 int main()
 {
-    // Test Game.h/Game.cpp
-    Game DartGame;
+    Game First(3);
+    Game Second;
+    Game Third(6);
 
-    DartGame.removePlayers();
-    DartGame.addPlayers();
-    DartGame.addPlayers();
-    DartGame.addPlayers();
-    DartGame.addPlayers();
-    DartGame.removePlayers();
-    DartGame.addPlayers();
-    DartGame.addPlayers();
-    DartGame.addPlayers();
-    DartGame.removePlayers();
-    DartGame.removePlayers();
+    First.listOfPlayers();
+    First.print();
+    Second.listOfPlayers();
+    Second.print();
+    Third.listOfPlayers();
+    Third.print();
 
-    DartGame.print();
-
-    // Test Player.h/Player.cpp
-    Player player1;
-
-    Player player2("Mulangu", "Mundemba");
-
-    player1.setLast("People");
-    player1.setScore(4);
-    player1.getScore();
-
-    player2.setFirst("Kanye");
-    player2.setScore(2);
-    player2.getScore();
-
-    player1.print();
-    player2.print();
+    return 0;
 }

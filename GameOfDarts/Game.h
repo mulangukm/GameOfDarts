@@ -6,16 +6,18 @@ using namespace std;
 #include <iostream>
 
 class Game
-{
+{	// Has-A: Player, Score, Ranking
 public:
 	Game();
-	//Player listOfPlayers();   FIXME
+	Game(int);
+	~Game();
+	void listOfPlayers();   
 	void addPlayers();
 	void removePlayers();
 	int nPlayers();
 	void print();
 private:
 	int nplayers;
-	//Player* players;			FIXME
+	Player* players;			
 };
 
