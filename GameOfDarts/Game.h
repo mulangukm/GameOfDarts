@@ -10,6 +10,8 @@ class Game
 public:
 	Game();
 	Game(int);
+	Game(const Game&);
+	Game & operator =(const Game&);
 	~Game();
 	void listOfPlayers();   
 	void addPlayers();

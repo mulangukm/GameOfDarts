@@ -17,6 +17,29 @@ Game::Game(int _nplayers) : nplayers(_nplayers)
 	}
 }
 
+Game::Game(const Game& RHS)
+{
+	nplayers = RHS.nplayers;
+	players = new Player[nplayers];
+	for (int i = 0; i < nplayers; i++)
+		players[i] = RHS.players[i];
+}
+
+Game & Game::operator =(const Game& RHS)
+{
+	if (this != &RHS)
+	{
+		if (players != nullptr)
+			delete[] players;
+
+		nplayers = RHS.nplayers;
+		players = new Player[nplayers];
+		for (int i = 0; i < nplayers; i++)
+			players[i] = RHS.players[i];
+	}
+	return *this;
+}
+
 Game::~Game()
 {
 	if (players != nullptr)
