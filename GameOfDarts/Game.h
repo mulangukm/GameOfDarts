@@ -13,9 +13,9 @@ public:
 	Game(const Game&);
 	Game & operator =(const Game&);
 	~Game();
-	void listOfPlayers();   
+	void printListOfPlayers();   
 	void addPlayers();
-	void removePlayers();
+	void removePlayers(int);
 	int nPlayers();
 	void print();
 private:

@@ -1,10 +1,12 @@
 #include "Game.h"
 
+// Default constructor to initialize all variables and create a new dynamic array of Object Player
 Game::Game() : nplayers(0)
 {
 	players = new Player[nplayers];
 }
 
+// Overloaded constructor to manually set the number of players and the names of each player
 Game::Game(int _nplayers) : nplayers(_nplayers)
 {
 	string f = "", l = "";
@@ -17,6 +19,7 @@ Game::Game(int _nplayers) : nplayers(_nplayers)
 	}
 }
 
+// Copy constructor
 Game::Game(const Game& RHS)
 {
 	nplayers = RHS.nplayers;
@@ -25,6 +28,7 @@ Game::Game(const Game& RHS)
 		players[i] = RHS.players[i];
 }
 
+// Copy assignment operator
 Game & Game::operator =(const Game& RHS)
 {
 	if (this != &RHS)
@@ -40,29 +44,36 @@ Game & Game::operator =(const Game& RHS)
 	return *this;
 }
 
+// Destructor
 Game::~Game()
 {
 	if (players != nullptr)
 		delete[] players;
 }
 
-void Game::listOfPlayers()
+// Print the list of players
+void Game::printListOfPlayers()
 {
 	for (int i = 0; i < nplayers; i++)
 		cout << i + 1 << ") " << this->players[i].getFirstName() << " " << this->players[i].getLastName() << endl;
 	cout << endl;
 }
 
+// Add a player to the list of players FIXME
 void Game::addPlayers()
 {
 	if (nplayers >= 0)
 		nplayers++;
 }
 
-void Game::removePlayers()
+// Remove a player at position pos FIXME
+void Game::removePlayers(int pos)
 {
-	if (nplayers > 0)
-		nplayers--;
+	if (pos > nplayers)
+		return;
+
+	cout << "Remove " << players[pos - 1].getFirstName() << " " << players[pos - 1].getLastName() << endl;
+
 }
 
 int Game::nPlayers()

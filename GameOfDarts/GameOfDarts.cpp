@@ -8,21 +8,25 @@ int main()
     Game Second(Third);
 
     cout << "\n\nFirst Game\n";
-    First.listOfPlayers();
+    First.printListOfPlayers();
     First.print();
 
     cout << "\n\nSecond Game - Copy Constructor\n";
-    Second.listOfPlayers();
+    Second.printListOfPlayers();
     Second.print();
 
     cout << "\n\nThird Game\n";
-    Third.listOfPlayers();
+    Third.printListOfPlayers();
     Third.print();
 
     cout << "\n\nCopy - Assignment Operator\n";
     Second = First;
-    Second.listOfPlayers();
+    Second.printListOfPlayers();
     Second.print();
 
+    cout << "\n\nWho should we remove?\n";
+    First.removePlayers(1);
+    Second.removePlayers(2);
+    Third.removePlayers(3);
     return 0;
 }
